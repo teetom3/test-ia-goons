@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nature &amp; Aventure</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            color: #2c2c2c;
+            background: #f5f2ee;
+        }
+
+        /* ── HEADER ── */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 48px;
+            background: rgba(30, 40, 25, 0.88);
+            backdrop-filter: blur(6px);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #c8d5a0;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 32px;
+        }
+
+        nav a {
+            color: #e8e4dc;
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: color 0.25s;
+        }
+
+        nav a:hover {
+            color: #c8d5a0;
+        }
+
+        /* ── HERO ── */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 500px;
+            overflow: hidden;
+        }
+
+        .hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 30%;
+            filter: brightness(0.65);
+        }
+
+        .hero-text {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            padding: 0 24px;
+        }
+
+        .hero-text .tag {
+            font-family: Arial, sans-serif;
+            font-size: 0.8rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #c8d5a0;
+            margin-bottom: 16px;
+        }
+
+        .hero-text h1 {
+            font-size: clamp(2.4rem, 6vw, 5rem);
+            line-height: 1.1;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+        }
+
+        .hero-text p {
+            font-family: Arial, sans-serif;
+            font-size: 1.05rem;
+            max-width: 520px;
+            color: #ddd;
+            margin-bottom: 36px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 36px;
+            background: #6a8c3a;
+            color: #fff;
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-radius: 3px;
+            transition: background 0.25s;
+        }
+
+        .btn:hover {
+            background: #557a2e;
+        }
+
+        /* ── SECTION TITRES ── */
+        .section-title {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .section-title .tag {
+            font-family: Arial, sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #6a8c3a;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: #1e2819;
+        }
+
+        /* ── ACTIVITES ── */
+        #activites {
+            padding: 90px 48px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 28px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            transition: transform 0.25s, box-shadow 0.25s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 28px rgba(0,0,0,0.14);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 24px;
+        }
+
+        .card-body .badge {
+            font-family: Arial, sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #6a8c3a;
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .card-body h3 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            color: #1e2819;
+        }
+
+        .card-body p {
+            font-family: Arial, sans-serif;
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* ── BANNIERE MILIEU ── */
+        .mid-banner {
+            position: relative;
+            height: 420px;
+            overflow: hidden;
+        }
+
+        .mid-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 40%;
+            filter: brightness(0.55);
+        }
+
+        .mid-banner-text {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            padding: 0 24px;
+        }
+
+        .mid-banner-text h2 {
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            margin-bottom: 16px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+        }
+
+        .mid-banner-text p {
+            font-family: Arial, sans-serif;
+            font-size: 1rem;
+            max-width: 480px;
+            color: #ddd;
+            margin-bottom: 28px;
+        }
+
+        /* ── SERVICES ── */
+        #services {
+            padding: 90px 48px;
+            background: #fff;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 36px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .service-item {
+            text-align: center;
+            padding: 32px 20px;
+            border: 1px solid #e0dbd2;
+            border-radius: 8px;
+        }
+
+        .service-icon {
+            font-size: 2rem;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .service-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: #1e2819;
+        }
+
+        .service-item p {
+            font-family: Arial, sans-serif;
+            font-size: 0.88rem;
+            color: #777;
+            line-height: 1.6;
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            background: #1e2819;
+            color: #a0a890;
+            text-align: center;
+            padding: 40px 24px;
+            font-family: Arial, sans-serif;
+            font-size: 0.88rem;
+            line-height: 2;
+        }
+
+        footer a {
+            color: #c8d5a0;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        footer .footer-logo {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #c8d5a0;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <span class="logo">Nature &amp; Aventure</span>
+        <nav>
+            <ul>
+                <li><a href="#activites">Activites</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <img src="images/IMG_20210621_152717.jpg" alt="Domaine au bord de l'etang">
+        <div class="hero-text">
+            <span class="tag">Bienvenue chez nous</span>
+            <h1>Vivez la nature,<br>librement</h1>
+            <p>Domaine nature au coeur de la campagne. Randonnees, equitation, sports nautiques et bien plus encore.</p>
+            <a href="#activites" class="btn">Decouvrir nos activites</a>
+        </div>
+    </section>
+
+    <!-- ACTIVITES -->
+    <section id="activites">
+        <div class="section-title">
+            <span class="tag">Ce que nous proposons</span>
+            <h2>Nos activites phares</h2>
+        </div>
+        <div class="cards">
+            <div class="card">
+                <img class="card-img" src="images/9708c4ac096ffc00c98741c2a3194bcd.png" alt="Course et trail">
+                <div class="card-body">
+                    <span class="badge">Sport &amp; Depassement</span>
+                    <h3>Trail &amp; Running</h3>
+                    <p>Partez a l'aube sur nos sentiers balis pour un trail en pleine nature. Tous niveaux, du debutant au confirme.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img" src="images/images (3).jpg" alt="Plage et surf">
+                <div class="card-body">
+                    <span class="badge">Eau &amp; Glisse</span>
+                    <h3>Surf &amp; Activites nautiques</h3>
+                    <p>Initiez-vous au surf ou perfectionnez votre technique avec nos moniteurs diplomes, dans un cadre exceptionnel en bord de mer.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img" src="images/a75c7630-a969-4d00-9071-0d615f294731.jpg" alt="Chevaux en liberte">
+                <div class="card-body">
+                    <span class="badge">Equitation</span>
+                    <h3>Balade a cheval</h3>
+                    <p>Decouvrez nos prairies et forets a dos de cheval. Nos cavaliers passionnes vous accompagnent pour une experience unique.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BANNIERE MILIEU -->
+    <div class="mid-banner">
+        <img src="images/a75c7630-a969-4d00-9071-0d615f294731.jpg" alt="Chevaux dans les pres">
+        <div class="mid-banner-text">
+            <h2>Un cadre naturel exceptionnel</h2>
+            <p>Des prairies immenses, des forets centenaires et un domaine ou chaque detail est pense pour votre bien-etre.</p>
+            <a href="#contact" class="btn">Nous contacter</a>
+        </div>
+    </div>
+
+    <!-- SERVICES -->
+    <section id="services">
+        <div class="section-title">
+            <span class="tag">Notre engagement</span>
+            <h2>Pourquoi nous choisir</h2>
+        </div>
+        <div class="services-grid">
+            <div class="service-item">
+                <span class="service-icon">&#127807;</span>
+                <h3>Cadre nature</h3>
+                <p>Un domaine preserve, loin de l'agitation, pour vous ressourcer vraiment.</p>
+            </div>
+            <div class="service-item">
+                <span class="service-icon">&#127939;</span>
+                <h3>Moniteurs certifies</h3>
+                <p>Tous nos accompagnateurs sont diplomes et passionnes par leurs disciplines.</p>
+            </div>
+            <div class="service-item">
+                <span class="service-icon">&#9734;</span>
+                <h3>Sejours sur mesure</h3>
+                <p>Week-end, semaine ou simple journee — nous adaptons chaque formule a vos envies.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact">
+        <span class="footer-logo">Nature &amp; Aventure</span>
+        <p>Contactez-nous : <a href="mailto:contact@nature-aventure.fr">contact@nature-aventure.fr</a></p>
+        <p style="margin-top: 4px;">Tel : +33 6 00 00 00 00</p>
+        <p style="margin-top: 20px; font-size: 0.8rem; color: #687060;">&copy; 2026 Nature &amp; Aventure. Tous droits reserves.</p>
+    </footer>
+
+</body>
+</html>
