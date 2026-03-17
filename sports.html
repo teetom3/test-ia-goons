@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Sports - Hotel Monde</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            color: #2c2c2c;
+            background: linear-gradient(135deg, #f5f1e8 0%, #e8dcc8 100%);
+            min-height: 100vh;
+        }
+
+        header {
+            background: linear-gradient(135deg, #8b4513 0%, #a0522d 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-size: 1.3em;
+            font-style: italic;
+            opacity: 0.95;
+        }
+
+        nav {
+            background: #6b3410;
+            padding: 15px 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 30px;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ffd700;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .intro {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .intro h2 {
+            font-size: 2.5em;
+            color: #8b4513;
+            margin-bottom: 20px;
+        }
+
+        .intro p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .sports-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .sport-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .sport-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .sport-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #8b4513 0%, #a0522d 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4em;
+        }
+
+        .sport-content {
+            padding: 30px;
+        }
+
+        .sport-content h3 {
+            color: #8b4513;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        .sport-content p {
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .sport-details {
+            font-size: 0.95em;
+            color: #888;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #8b4513;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 15px;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #6b3410;
+        }
+
+        footer {
+            background: #6b3410;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 80px;
+        }
+
+        footer p {
+            font-size: 0.95em;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5em;
+            }
+
+            .sports-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🌍 Hotel Monde</h1>
+        <p>Découvrez nos différents sports et activités physiques</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="activites.html">Activités</a>
+        <a href="sports.html">Sports</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <div class="container">
+        <div class="intro">
+            <h2>Nos Sports</h2>
+            <p>Profitez de nos installations sportives de classe mondiale et participez à une variété de sports pour tous les niveaux de compétence. Que vous soyez débutant ou athlète confirmé, l'Hotel Monde offre des expériences sportives inoubliables.</p>
+        </div>
+
+        <div class="sports-grid">
+            <div class="sport-card">
+                <div class="sport-image">⚽</div>
+                <div class="sport-content">
+                    <h3>Football</h3>
+                    <p>Jouez au football sur nos terrains de qualité professionnelle. Participez à des matchs amicaux ou rejoignez nos ligues internes pour des compétitions amusantes.</p>
+                    <div class="sport-details">
+                        <strong>Équipements:</strong> Terrains professionnels<br>
+                        <strong>Nombre de joueurs:</strong> 11 par équipe<br>
+                        <strong>Niveau:</strong> Tous niveaux
+                    </div>
+                    <a href="#" class="btn">En savoir plus</a>
+                </div>
+            </div>
+
+            <div class="sport-card">
+                <div class="sport-image">🎾</div>
+                <div class="sport-content">
+                    <h3>Tennis</h3>
+                    <p>Affrontez-vous sur nos courts de tennis modernes avec surface synthétique. Leçons particulières et matchs disponibles pour tous les âges.</p>
+                    <div class="sport-details">
+                        <strong>Équipements:</strong> 4 courts de tennis<br>
+                        <strong>Nombre de joueurs:</strong> 2 à 4<br>
+                        <strong>Niveau:</strong> Débutant à avancé
+                    </div>
+                    <a href="#" class="btn">En savoir plus</a>
+                </div>
+            </div>
+
+            <div class="sport-card">
+                <div class="sport-image">🏀</div>
+                <div class="sport-content">
+                    <h3>Basketball</h3>
+                    <p>Participez à des parties de basketball sur notre terrain couvert climatisé. Idéal pour les matchs amicaux et les entraînements intensifs.</p>
+                    <div class="sport-details">
+                        <strong>Équipements:</strong> 1 terrain intérieur<br>
+                        <strong>Nombre de joueurs:</strong> 10 par équipe<br>
+                        <strong>Niveau:</strong> Tous niveaux
+                    </div>
+                    <a href="#" class="btn">En savoir plus</a>
+                </div>
+            </div>
+
+            <div class="sport-card">
+                <div class="sport-image">🏊</div>
+                <div class="sport-content">
+                    <h3>Natation</h3>
+                    <p>Nagez dans notre piscine olympique chauffée avec des installations modernes. Cours de natation et entraînements aquatiques disponibles.</p>
+                    <div class="sport-details">
+                        <strong>Équipements:</strong> Piscine olympique<br>
+                        <strong>Profondeur:</strong> 1.2m à 2m<br>
+                        <strong>Niveau:</strong> Débutant à expert
+                    </div>
+                    <a href="#" class="btn">En savoir plus</a>
+                </div>
+            </div>
+
+            <div class="sport-card">
+                <div class="sport-image">⛳</div>
+                <div class="sport-content">
+                    <h3>Golf</h3>
+                    <p>Jouez au golf sur notre parcours 18 trous. Leçons avec des professionnels et équipements de location disponibles pour tous.</p>
+                    <div class="sport-details">
+                        <strong>Équipements:</strong> Parcours 18 trous<br>
+                        <strong>Nombre de joueurs:</strong> 1 à 4<br>
+                        <strong>Niveau:</strong> Débutant à professionnel
+                    </div>
+                    <a href="#" class="btn">En savoir plus</a>
+                </div>
+            </div>
+
+            <div class="sport-card">
+                <div class="sport-image">🏐</div>
+                <div class="sport-content">
+                    <h3>Volley-ball</h3>
+                    <p>Disputez des matchs de volley-ball sur nos courts aménagés. Tournois réguliers et entraînements collectifs organisés.</p>
+                    <div class="sport-details">
+                        <strong>Équipements:</strong> 2 courts intérieurs<br>
+                        <strong>Nombre de joueurs:</strong> 12 par équipe<br>
+                        <strong>Niveau:</strong> Tous niveaux
+                    </div>
+                    <a href="#" class="btn">En savoir plus</a>
+                </div>
+            </div>
+
+            <div class="sport-card">
+                <div class="sport-image">🏸</div>
+                <div class="sport-content">
+                    <h3>Badminton</h3>
+                    <p>Jouez au badminton dans notre salle dédiée équipée de courts spacieux. Parfait pour une activité rapide et amusante.</p>
+                    <div class="sport-details">
+                        <strong>Équipements:</strong> 3 courts de badminton<br>
+                        <strong>Nombre de joueurs:</strong> 2 à 4<br>
+                        <strong>Niveau:</strong> Débutant à avancé
+                    </div>
+                    <a href="#" class="btn">En savoir plus</a>
+                </div>
+            </div>
+
+            <div class="sport-card">
+                <div class="sport-image">🏋️</div>
+                <div class="sport-content">
+                    <h3>Musculation</h3>
+                    <p>Entraînez-vous dans notre salle de sport ultra-moderne équipée d'appareils dernière génération et d'un personnel compétent.</p>
+                    <div class="sport-details">
+                        <strong>Équipements:</strong> Salle de gym complète<br>
+                        <strong>Nombre de personnes:</strong> Sans limite<br>
+                        <strong>Niveau:</strong> Débutant à expert
+                    </div>
+                    <a href="#" class="btn">En savoir plus</a>
+                </div>
+            </div>
+
+            <div class="sport-card">
+                <div class="sport-image">🚴</div>
+                <div class="sport-content">
+                    <h3>Cyclisme</h3>
+                    <p>Explorez les alentours à vélo sur nos routes pittoresques. Location de vélos et excursions guidées disponibles tous les jours.</p>
+                    <div class="sport-details">
+                        <strong>Équipements:</strong> Vélos de route et VTT<br>
+                        <strong>Nombre de cyclists:</strong> Illimité<br>
+                        <strong>Niveau:</strong> Tous niveaux
+                    </div>
+                    <a href="#" class="btn">En savoir plus</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Hotel Monde - Tous droits réservés | <a href="#" style="color: #ffd700; text-decoration: none;">Conditions d'utilisation</a></p>
+    </footer>
+</body>
+</html>
